@@ -24,7 +24,7 @@ public class User {
     private String password;
     private String resetCode;
     private String role;
-    private byte[] photoData;
+    private Image image;
     private List<Contact> contacts = new ArrayList<>(); // Initialize the contacts list
     public Status status;
 

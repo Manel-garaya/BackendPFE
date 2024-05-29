@@ -110,4 +110,8 @@ public class UserService {
         Optional<User> userOptional = userRepository.findById(userId);
         return userOptional.map(User::getUsername);
     }
+
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 }
