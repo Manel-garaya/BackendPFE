@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
@@ -25,10 +26,11 @@ public class User {
     private String resetCode;
     private String role;
     private Image image;
-    private List<Contact> contacts = new ArrayList<>(); // Initialize the contacts list
+    //private List<Contact> contacts = new ArrayList<>(); // Initialize the contacts list
     public Status status;
 
-
+    @DBRef
+    private List<Contact> contacts;
 
 
     public User (String username ,String email ,String birthday , String password , String resetCode , String role ,  List<Contact> contacts){
