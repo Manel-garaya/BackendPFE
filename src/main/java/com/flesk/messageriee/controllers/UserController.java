@@ -240,6 +240,15 @@ public class UserController {
         userService.saveeUser(user);
         return user;
     }
+
+    @GetMapping("/searchContacts")
+    public ResponseEntity<List<Contact>> searchContacts(@RequestParam String username) {
+        List<Contact> contacts = userService.searchContactsByName(username);
+        if (contacts.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(contacts);
+    }
     @MessageMapping("/user/addUserr")
     @SendTo("/user/topic")
     public User disconnect (

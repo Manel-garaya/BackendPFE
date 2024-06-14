@@ -27,7 +27,7 @@ public class User {
     private String role;
     private Image image;
     //private List<Contact> contacts = new ArrayList<>(); // Initialize the contacts list
-    public Status status;
+    private Status status;
 
     @DBRef
     private List<Contact> contacts;
@@ -42,6 +42,7 @@ public class User {
         this.resetCode=resetCode;
         this.role=role;
         this.contacts = contacts != null ? contacts : new ArrayList<>(); // Initialize if null
+        this.status = Status.OFFLINE; // Initialiser le statut par défaut à OFFLINE
 
 
 

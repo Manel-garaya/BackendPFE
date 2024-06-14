@@ -15,5 +15,6 @@ public interface ContactRepo extends MongoRepository<Contact, String> {
     boolean existsByEmail(String email);
 
     void deleteByEmail(String email);
+    List<Contact> findByNameContainingIgnoreCase(String name);
 
 }
